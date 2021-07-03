@@ -66,20 +66,22 @@
             const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
             if (!audio)
                 return;
+            // 为找到的对应标签添加类名
             key.classList.add('playing');
-            console.log(key.classList);
+            // 设置audio的当前时间并播放
             audio.currentTime = 0;
             audio.play();
         }
         function removeTransition(e) {
-            if (e.propertyName !== 'transform') return;
+            if (e.propertyName !== 'transform')
+                return;
+            // 播放完成后将类名移去
             e.target.classList.remove('playing');
         }
-        // 将得到的伪数组对象转换成数组
-        console.log(document.querySelectorAll('.key'));
+        // 将得到的类数组对象转换成数组keys
         const keys = Array.from(document.querySelectorAll('.key'));
-        console.log(keys);
-        keys.forEach(key => key.addEventListener('transitioned', removeTransition));
+        // transitionend事件是在CSS完成过渡后触发
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
         // 添加键盘事件监听
         window.addEventListener('keydown', playSound);
     </script>

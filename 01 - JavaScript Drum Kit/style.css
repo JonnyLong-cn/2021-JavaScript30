@@ -1,39 +1,66 @@
-html{
+html {
     /* 定义全局字体大小 */
-    font-size:10px;
-    background: url('./back.jpg') bottom center;
+    font-size: 10px;
+    background: url('./background.jpg') bottom center;
     /* 将背景图像等比缩放到完全覆盖容器 */
     background-size: cover;
 }
-body,html{
-    margin:0;
-    padding:0;
-    /* font-family: sans-serif; */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    /* 兜底字体 */
+    font-family: sans-serif;
 }
-.keys{
-    display:flex;
-    flex:1;
+
+.keys {
+    display: flex;
+    flex: 1;
     /* 最小高度
     vh: 相对于视口的高度,视口被均分为100单位的vh
     */
     min-height: 100vh;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
-.key{
+
+.key {
     /* rem: 相对长度单位。相对于根元素(即html元素)font-size计算值的倍数 */
     border: 0.4rem solid black;
-    border-radius:0.5rem;
-    margin:1rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
     /* 定义key内字体大小 */
-    font-size:1.5rem;
-    padding:1rem 0.5rem;
-    /* transition: all 0.07s ease; */
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
+    /* 对所有可以进行过渡的css属性，在0.07s内，平滑过渡 */
+    transition: all 0.07s ease;
     width: 10rem;
     text-align: center;
     color: white;
     /* key框内背景颜色，半透明黑色 */
-    background:rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4);
     /* 字体影子 */
-    text-shadow:0 0 0.5rem black;
+    text-shadow: 0 0 0.5rem black;
+}
+
+.playing {
+    /* 缩放为原先的1.2倍 */
+    transform: scale(1.2);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+    display: block;
+    font-size: 4rem;
+}
+
+.sound {
+    /* 下面打击声的字体大小 */
+    font-size: 1.2rem;
+    /* 变成大写 */
+    text-transform: uppercase;
+    /* 字间距 */
+    letter-spacing: 0.2rem;
+    color: #ffc600;
 }
