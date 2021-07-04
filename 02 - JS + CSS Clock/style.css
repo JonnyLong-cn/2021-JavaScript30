@@ -42,17 +42,20 @@ body {
 .hand {
     width: 50%;
     background: #fff;
+    /* 让每个指针通过绝对定位到正中间位置 */
     position: absolute;
     top: 50%;
     right: 50%;
+    /* 阴影，显得真实 */
     box-shadow: 0 0 0 0.1px #fff, 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.4), 2px 5px 1px rgba(0, 0, 0, 0.5);
+    /* 设置变换中心点 */
     transform-origin: 100% 50%;
+    /* rotate: 旋转变换，旋转90度，让指针垂直指向到0点位置 */
     transform: rotate(90deg);
-    transition-timing-function: cubic-bezier(0.9, 0.54, 0.26, 1.68);
+    transition-timing-function: linear;
 }
 
 /* 时钟中心的那个灰色的点 */
-
 .clock-face:after {
     /* em: 相对于当前对象内文本的字体尺寸 */
     width: 1em;
@@ -73,16 +76,23 @@ body {
     width: 40%;
     height: 10px;
     margin-top: -5px;
-    border-bottom-left-radius: .5em;
-    border-top-left-radius: .5em;
-    transition: all 3s;
+    /* 让指针头为圆弧 */
+    border-bottom-left-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    transition: all 2s linear;
 }
 
 .min-hand {
     width: 45%;
     height: 5px;
     margin-top: -2.5px;
-    transition: all .1s cubic-bezier(0.9, 0.54, 0.26, 1.68);
+    /* 让指针头为圆弧 */
+    border-bottom-left-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    /* property duration timing-function
+        过渡属性    过渡时间    动画类型
+    */
+    transition: all 2s linear;
 }
 
 .second-hand {
@@ -90,6 +100,6 @@ body {
     margin-top: -1px;
     border-bottom-left-radius: 100%;
     border-top-left-radius: 100%;
-    transition: all .05s cubic-bezier(0.9, 0.54, 0.26, 1.68);
+    transition: all 0.05s linear;
     background-color: red;
 }
