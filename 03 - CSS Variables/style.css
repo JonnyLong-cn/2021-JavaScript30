@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+    background: #193549;
+    color: white;
+    font-family: 'helvetica neue', sans-serif;
+    font-weight: 100;
+    font-size: 25px;
+}
+
+.controls {
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100px;
+}
+
+/* 声明全局(:root)的CSS变量
+这个伪元素匹配的是文档的根元素，也就是 <html> 标签。
+ */
+:root {
+    --spacing: 5px;
+    --base: #fff;
+    --blur: 0px;
+    --photo-size: 250px;
+}
+
+img {
+    padding: var(--spacing);
+    filter: blur(var(--blur));
+    background: var(--base);
+    width: var(--photo-size);
+}
+
+.result {
+    font-size: 20px;
+    color: var(--base);
+}

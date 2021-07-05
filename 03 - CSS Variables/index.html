@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>用JS更新CSS变量</h2>
+    <div class="controls">
+        <label for="spacing">边框距:</label>
+        <input type="range" name="spacing" min="5" max="100" value="10" data-suffix="px">
+
+        <label for="blur">模糊度:</label>
+        <input type="range" name="blur" min="0" max="25" value="0" data-suffix="px">
+
+        <label for="photo-size">图片大小:</label>
+        <input type="range" name="photo-size" min="250" max="1000" value="250" data-suffix="px">
+
+        <label for="base">边框色</label>
+        <input type="color" name="base" value="#ffffff">
+
+        <br>
+        <code class="result">
+            img {
+                padding: <label id="code-spacing">5px</label>;
+                filter: blur(<label id="code-blur">0px</label>);
+                width: <label id="code-photo-size">250px</label>;
+                background: <label id="code-base">#ffffff</label>;
+            }
+        </code>
+    </div>
+    <img src="./picture.jpg">
+    <script src="./index.js"></script>
+</body>
+
+</html>
