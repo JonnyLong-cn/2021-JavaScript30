@@ -1,0 +1,89 @@
+html {
+    box-sizing: border-box;
+    background: rgba(136, 179, 191, 0.6);
+    font-family: 'Kaiti', 'SimHei';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+input {
+    width: 100%;
+    padding: 20px;
+    font-family: 'Kaiti', 'helvetica neue';
+}
+
+.search-form {
+    max-width: 700px;
+    /* 上下margin为50px，左右margin自动，即实现刚好居中 */
+    margin: 50px auto;
+}
+
+.search {
+    margin: 0;
+    text-align: center;
+    border: 5px solid #f7f7f7;
+    /* 让光标选中input框时，外框不显示 */
+    outline: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 5px -5px 10px rgba(136, 179, 191, 0.8);
+}
+
+.suggestions {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.suggestions li {
+    /* 去除li的前面的小黑点 */
+    list-style: none;
+    background: white;
+    border-bottom: 1px solid #D8D8D8;
+    margin: 0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+    display: flex;
+    justify-content: center;
+}
+
+/* 偶数 */
+.suggestions li:nth-child(even) {
+    transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+    background: lightyellow;
+}
+
+/* 奇数 */
+.suggestions li:nth-child(odd) {
+    transform: perspective(100px) rotateX(-3deg) translateY(3px);
+    background: lightyellow;
+}
+
+span.population {
+    font-size: 15px;
+}
+
+span.info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 诗名-作者 */
+span.author, span.title {
+    font-size: 0.8em;
+}
+
+span.title {
+    color: #7c8e94;
+    position: absolute;
+    right: 5px;
+    bottom: 1px;
+}
+
+.highlight {
+    background: rgba(250, 88, 244, 0.5);
+}
